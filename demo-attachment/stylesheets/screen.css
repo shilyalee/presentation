@@ -1,0 +1,401 @@
+/* line 12, ../sass/screen.scss */
+svg {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  display: inline-block;
+  vertical-align: middle; }
+
+/* line 20, ../sass/screen.scss */
+a {
+  text-decoration: none; }
+
+/* line 24, ../sass/screen.scss */
+html {
+  width: 100%;
+  height: 100%; }
+
+/* line 28, ../sass/screen.scss */
+body {
+  font-family: "Helvetica Neue", "Segoe UI", Helvetica, Arial, "Lucida Grande", sans-serif;
+  margin: 0 auto;
+  background-color: #F7F8FF;
+  max-height: 720px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%; }
+
+/* line 38, ../sass/screen.scss */
+.container {
+  position: relative;
+  width: 1360px;
+  margin: 0 auto;
+  box-sizing: border-box; }
+
+/* line 45, ../sass/screen.scss */
+#compose-container {
+  height: 720px;
+  background: url("../img/base-2.png") top center no-repeat;
+  background-size: 100% auto;
+  padding-top: 190px;
+  padding-left: 228px; }
+
+/* line 53, ../sass/screen.scss */
+#msg-read-container {
+  height: 765px;
+  background: url("../img/base-conversation.png") top center no-repeat;
+  background-size: 100% auto;
+  padding-top: 413px;
+  padding-left: 228px; }
+  /* line 60, ../sass/screen.scss */
+  #msg-read-container .summary svg {
+    transform: scale(0.9); }
+  /* line 64, ../sass/screen.scss */
+  #msg-read-container .attachment-tray {
+    padding-top: 0; }
+
+/* line 69, ../sass/screen.scss */
+#compose-area {
+  position: relative;
+  width: 800px;
+  height: 457px;
+  overflow: scroll; }
+  /* line 74, ../sass/screen.scss */
+  #compose-area .msg-area {
+    position: relative;
+    display: block;
+    min-height: 224px; }
+    /* line 78, ../sass/screen.scss */
+    #compose-area .msg-area .msg {
+      font-size: 13px;
+      line-height: 30px; }
+    /* line 82, ../sass/screen.scss */
+    #compose-area .msg-area .inline-image {
+      position: relative;
+      display: none;
+      width: 400px;
+      margin-top: 16px; }
+      /* line 87, ../sass/screen.scss */
+      #compose-area .msg-area .inline-image img {
+        width: 100%;
+        border: 1px solid rgba(24, 143, 255, 0); }
+      /* line 91, ../sass/screen.scss */
+      #compose-area .msg-area .inline-image.enlarge {
+        width: auto;
+        max-width: 765px; }
+        /* line 94, ../sass/screen.scss */
+        #compose-area .msg-area .inline-image.enlarge img {
+          width: 100%; }
+        /* line 97, ../sass/screen.scss */
+        #compose-area .msg-area .inline-image.enlarge .inline-menu {
+          left: 751px; }
+          /* line 99, ../sass/screen.scss */
+          #compose-area .msg-area .inline-image.enlarge .inline-menu .l-menu {
+            left: -140px; }
+      /* line 104, ../sass/screen.scss */
+      #compose-area .msg-area .inline-image.show {
+        display: block; }
+      /* line 108, ../sass/screen.scss */
+      #compose-area .msg-area .inline-image.focus img {
+        border: 1px solid rgba(24, 143, 255, 0.8); }
+    /* line 113, ../sass/screen.scss */
+    #compose-area .msg-area .inline-menu {
+      position: absolute;
+      left: 386px;
+      top: -14px;
+      z-index: 1;
+      display: none;
+      opacity: 0; }
+      /* line 120, ../sass/screen.scss */
+      #compose-area .msg-area .inline-menu .l-menu-entry {
+        display: block;
+        width: 28px;
+        height: 28px;
+        box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+        border-radius: 14px;
+        background: white;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 4px;
+        transition: .16s opacity; }
+      /* line 132, ../sass/screen.scss */
+      #compose-area .msg-area .inline-menu .l-menu {
+        position: absolute;
+        left: 0;
+        display: block;
+        margin-top: 4px; }
+        /* line 137, ../sass/screen.scss */
+        #compose-area .msg-area .inline-menu .l-menu a {
+          position: relative;
+          padding-left: 36px; }
+          /* line 140, ../sass/screen.scss */
+          #compose-area .msg-area .inline-menu .l-menu a .select-state {
+            position: absolute;
+            left: 8px;
+            top: -8px;
+            height: 32px;
+            display: none; }
+          /* line 148, ../sass/screen.scss */
+          #compose-area .msg-area .inline-menu .l-menu a.selected .select-state {
+            display: inline-block; }
+      /* line 154, ../sass/screen.scss */
+      #compose-area .msg-area .inline-menu.show {
+        display: block;
+        opacity: 1; }
+
+/* line 164, ../sass/screen.scss */
+.attachment-tray {
+  position: relative;
+  z-index: 10;
+  background-color: white;
+  width: 718px;
+  bottom: 0px;
+  padding: 24px 0 16px;
+  font-size: 11px; }
+  /* line 172, ../sass/screen.scss */
+  .attachment-tray .summary {
+    margin-bottom: 8px; }
+    /* line 174, ../sass/screen.scss */
+    .attachment-tray .summary a {
+      line-height: 20px;
+      color: #188FFF; }
+    /* line 178, ../sass/screen.scss */
+    .attachment-tray .summary svg {
+      fill: #188FFF; }
+  /* line 183, ../sass/screen.scss */
+  .attachment-tray .attachment {
+    position: relative;
+    width: 120px;
+    margin-right: 16px;
+    display: inline-block; }
+    /* line 189, ../sass/screen.scss */
+    .attachment-tray .attachment.focus .preview {
+      border-color: rgba(24, 143, 255, 0.8); }
+    /* line 193, ../sass/screen.scss */
+    .attachment-tray .attachment .preview {
+      position: relative;
+      margin: 12px 0 0 0;
+      height: 80px;
+      width: 120px;
+      border: 1px solid #F7F8FF;
+      border-radius: 2px;
+      transition: .12s border-color; }
+      /* line 201, ../sass/screen.scss */
+      .attachment-tray .attachment .preview::after {
+        position: absolute;
+        content: '';
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: .12s opacity;
+        font-weight: medium;
+        line-height: 80px;
+        text-align: center; }
+      /* line 214, ../sass/screen.scss */
+      .attachment-tray .attachment .preview[data-previewable=true]:hover {
+        cursor: pointer; }
+        /* line 216, ../sass/screen.scss */
+        .attachment-tray .attachment .preview[data-previewable=true]:hover::after {
+          content: 'Preview';
+          color: #188FFF;
+          background: rgba(255, 255, 255, 0.95);
+          opacity: 1; }
+    /* line 224, ../sass/screen.scss */
+    .attachment-tray .attachment[data-type=img] .preview {
+      background: url(../img/RoomLayout.png) center center no-repeat;
+      background-size: 100% auto; }
+    /* line 228, ../sass/screen.scss */
+    .attachment-tray .attachment[data-type=pdf] .preview {
+      background: url(../img/pdf-thumb.png) center center no-repeat;
+      background-size: 100% auto; }
+    /* line 232, ../sass/screen.scss */
+    .attachment-tray .attachment[data-type=quote] .preview {
+      background: url(../img/quote.jpg) center center no-repeat;
+      background-size: 100% auto; }
+    /* line 236, ../sass/screen.scss */
+    .attachment-tray .attachment .download {
+      position: relative;
+      padding-top: 8px;
+      color: #979BA7; }
+      /* line 240, ../sass/screen.scss */
+      .attachment-tray .attachment .download svg {
+        vertical-align: top;
+        transform: scale(0.9);
+        fill: #979BA7;
+        margin: 0 1px; }
+      /* line 246, ../sass/screen.scss */
+      .attachment-tray .attachment .download p {
+        display: inline-block;
+        margin: 0 0 0 0;
+        line-height: 18px; }
+        /* line 250, ../sass/screen.scss */
+        .attachment-tray .attachment .download p span {
+          color: #B9BDC5; }
+      /* line 254, ../sass/screen.scss */
+      .attachment-tray .attachment .download .tip {
+        position: absolute;
+        opacity: 0;
+        top: 48px;
+        left: 21px;
+        transition: 0.16s all;
+        z-index: 10; }
+      /* line 262, ../sass/screen.scss */
+      .attachment-tray .attachment .download:hover {
+        cursor: pointer; }
+        /* line 264, ../sass/screen.scss */
+        .attachment-tray .attachment .download:hover svg {
+          fill: #188FFF; }
+        /* line 267, ../sass/screen.scss */
+        .attachment-tray .attachment .download:hover p {
+          color: #188FFF; }
+          /* line 269, ../sass/screen.scss */
+          .attachment-tray .attachment .download:hover p span {
+            color: #188FFF; }
+        /* line 273, ../sass/screen.scss */
+        .attachment-tray .attachment .download:hover .tip {
+          top: 40px;
+          opacity: 1; }
+    /* line 279, ../sass/screen.scss */
+    .attachment-tray .attachment .attachment-menu {
+      position: absolute;
+      left: 108px;
+      top: 0;
+      opacity: 0;
+      display: none;
+      z-index: 1; }
+      /* line 286, ../sass/screen.scss */
+      .attachment-tray .attachment .attachment-menu .s-menu-entry {
+        display: block;
+        width: 24px;
+        height: 24px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        border-radius: 12px;
+        background: white;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 2px;
+        transition: .16s opacity; }
+        /* line 297, ../sass/screen.scss */
+        .attachment-tray .attachment .attachment-menu .s-menu-entry svg {
+          transform: scale(0.8); }
+      /* line 301, ../sass/screen.scss */
+      .attachment-tray .attachment .attachment-menu .s-menu {
+        display: block;
+        margin-top: 4px; }
+        /* line 304, ../sass/screen.scss */
+        .attachment-tray .attachment .attachment-menu .s-menu a {
+          font-size: 11px; }
+      /* line 308, ../sass/screen.scss */
+      .attachment-tray .attachment .attachment-menu.show {
+        display: block;
+        opacity: 1; }
+
+/* line 317, ../sass/screen.scss */
+.menu-entry {
+  cursor: pointer; }
+  /* line 319, ../sass/screen.scss */
+  .menu-entry svg {
+    fill: #979BA7; }
+  /* line 323, ../sass/screen.scss */
+  .menu-entry:hover svg {
+    fill: #188FFF; }
+  /* line 327, ../sass/screen.scss */
+  .menu-entry.inactivate {
+    cursor: default; }
+    /* line 329, ../sass/screen.scss */
+    .menu-entry.inactivate svg {
+      fill: #B9BDC5; }
+    /* line 333, ../sass/screen.scss */
+    .menu-entry.inactivate:hover svg {
+      fill: #B9BDC5; }
+
+/* line 339, ../sass/screen.scss */
+.menu {
+  border-radius: 2px;
+  position: relative;
+  background-color: white;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  display: none;
+  max-height: 0;
+  overflow: hidden; }
+  /* line 347, ../sass/screen.scss */
+  .menu.show {
+    max-height: 999px; }
+  /* line 350, ../sass/screen.scss */
+  .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 4px 0; }
+    /* line 354, ../sass/screen.scss */
+    .menu ul.bottom {
+      border-top: 1px solid #F1F1F5; }
+    /* line 358, ../sass/screen.scss */
+    .menu ul li:hover {
+      background-color: rgba(24, 143, 255, 0.08); }
+      /* line 360, ../sass/screen.scss */
+      .menu ul li:hover a {
+        color: #188FFF; }
+      /* line 363, ../sass/screen.scss */
+      .menu ul li:hover svg {
+        fill: #188FFF; }
+    /* line 367, ../sass/screen.scss */
+    .menu ul li a {
+      padding: 0 16px;
+      line-height: 32px;
+      font-size: 13px;
+      color: #26282A;
+      text-decoration: none;
+      white-space: nowrap; }
+
+/* line 379, ../sass/screen.scss */
+#doc-preview-container {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: #F1F1F5;
+  display: none; }
+  /* line 388, ../sass/screen.scss */
+  #doc-preview-container .doc-preview-nav {
+    position: fixed;
+    height: 60px;
+    width: 1360px;
+    top: 0;
+    left: 50%;
+    margin-left: -680px;
+    background: linear-gradient(to right, #7282fb, #755bf9, #7934f7); }
+    /* line 396, ../sass/screen.scss */
+    #doc-preview-container .doc-preview-nav .right {
+      float: right;
+      margin-right: 24px;
+      line-height: 60px; }
+      /* line 400, ../sass/screen.scss */
+      #doc-preview-container .doc-preview-nav .right svg {
+        fill: white; }
+      /* line 403, ../sass/screen.scss */
+      #doc-preview-container .doc-preview-nav .right svg:hover {
+        cursor: pointer; }
+    /* line 407, ../sass/screen.scss */
+    #doc-preview-container .doc-preview-nav .left {
+      float: left;
+      margin-left: 24px;
+      color: white;
+      font-size: 16px;
+      line-height: 60px; }
+  /* line 415, ../sass/screen.scss */
+  #doc-preview-container .doc-preview {
+    clear: both;
+    position: fixed;
+    width: 1360px;
+    left: 50%;
+    margin-left: -680px;
+    top: 60px;
+    bottom: 0;
+    background-color: #F7F8FF;
+    text-align: center;
+    padding-top: 36px;
+    box-sizing: border-box; }

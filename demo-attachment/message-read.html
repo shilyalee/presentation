@@ -1,0 +1,196 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Norrin Prototype - Attachment </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="stylesheets/screen.css" />
+    <script src="js/jquery.js"></script>
+
+</head>
+<body>
+  <div id="msg-read-container" class="container">
+    <div id="msg-read">
+      <div class="attachment-tray">
+        <div class="summary">
+          <a class="remove-all" href="javascript:void(0)" target="_blank">
+              <svg shape-rendering="auto">
+                <g id="DOWNLOAD">
+                  <path d="M16.8,13.5c-0.4,0-0.8,0.3-0.8,0.8v1.2H4v-1.3c0-0.4-0.3-0.7-0.7-0.7s-0.8,0.3-0.8,0.8v2
+                    c0,0.4,0.3,0.7,0.8,0.7H17c0.4,0,0.5-0.3,0.5-0.7v-2C17.5,13.8,17.2,13.5,16.8,13.5z"/>
+                  <path d="M9.5,13.1c0.3,0.2,0.7,0.2,0.9,0l3.9-3.6c0.3-0.3,0.3-0.7,0-1c-0.1-0.1-0.3-0.2-0.5-0.2l0,0l0,0l0,0l-2.3,0.5
+                    V3.1c0-0.3-0.3-0.6-0.6-0.6H9.1c-0.3,0-0.6,0.3-0.6,0.6v5.7L6.2,8.3l0,0l0,0l0,0c-0.2,0-0.3,0-0.5,0.2c-0.3,0.3-0.3,0.7,0,1
+                    L9.5,13.1z"/>
+                </g>
+              </svg>
+              Download <span class="attachment-number">2</span> attachments
+          </a>
+        </div>
+
+        <div id="layout" class="attachment" data-type="quote">
+          <div class="preview" data-previewable="true" data-targettype="img" data-targetvalue="img/quote.jpg" data-filename="quote.jpg">
+          </div>
+          <div class="download">
+            <div class="icon-area">
+              <svg shape-rendering="auto">
+                <g id="DOWNLOAD">
+                  <path d="M16.8,13.5c-0.4,0-0.8,0.3-0.8,0.8v1.2H4v-1.3c0-0.4-0.3-0.7-0.7-0.7s-0.8,0.3-0.8,0.8v2
+                    c0,0.4,0.3,0.7,0.8,0.7H17c0.4,0,0.5-0.3,0.5-0.7v-2C17.5,13.8,17.2,13.5,16.8,13.5z"/>
+                  <path d="M9.5,13.1c0.3,0.2,0.7,0.2,0.9,0l3.9-3.6c0.3-0.3,0.3-0.7,0-1c-0.1-0.1-0.3-0.2-0.5-0.2l0,0l0,0l0,0l-2.3,0.5
+                    V3.1c0-0.3-0.3-0.6-0.6-0.6H9.1c-0.3,0-0.6,0.3-0.6,0.6v5.7L6.2,8.3l0,0l0,0l0,0c-0.2,0-0.3,0-0.5,0.2c-0.3,0.3-0.3,0.7,0,1
+                    L9.5,13.1z"/>
+                </g>
+              </svg>
+              <p>quote.jpg<br/><span>12 KB</span></p>
+              <img src="img/download-tip.png" width="78px" class="tip"/>
+            </div>
+          </div>
+        </div>
+        <div class="attachment" data-type="pdf">
+          <div class="preview" data-previewable="true" data-targettype="pdf" data-targetvalue="img/Book_Review.pdf" data-filename="Book_Review.pdf">
+          </div>
+          <div class="download">
+            <div class="icon-area">
+              <svg shape-rendering="auto">
+                <g id="DOWNLOAD">
+                  <path d="M16.8,13.5c-0.4,0-0.8,0.3-0.8,0.8v1.2H4v-1.3c0-0.4-0.3-0.7-0.7-0.7s-0.8,0.3-0.8,0.8v2
+                    c0,0.4,0.3,0.7,0.8,0.7H17c0.4,0,0.5-0.3,0.5-0.7v-2C17.5,13.8,17.2,13.5,16.8,13.5z"/>
+                  <path d="M9.5,13.1c0.3,0.2,0.7,0.2,0.9,0l3.9-3.6c0.3-0.3,0.3-0.7,0-1c-0.1-0.1-0.3-0.2-0.5-0.2l0,0l0,0l0,0l-2.3,0.5
+                    V3.1c0-0.3-0.3-0.6-0.6-0.6H9.1c-0.3,0-0.6,0.3-0.6,0.6v5.7L6.2,8.3l0,0l0,0l0,0c-0.2,0-0.3,0-0.5,0.2c-0.3,0.3-0.3,0.7,0,1
+                    L9.5,13.1z"/>
+                </g>
+              </svg>
+              <p>Book_Review.pdf<br/><span>276 KB</span></p>
+              <img src="img/download-tip.png" width="78px" class="tip"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="doc-preview-container">
+    <div class="doc-preview-nav">
+      <div class="left">
+      </div>
+      <div class="right">
+        <svg shape-rendering="auto" class="close-preview">
+          <g id="CLOSE">
+          	<path d="M10,9l5.1-5.1c0.3-0.3,0.7-0.3,1,0c0.3,0.3,0.3,0.7,0,1L11,10l5.1,5.1c0.3,0.3,0.3,0.7,0,1
+          		c-0.3,0.3-0.7,0.3-1,0L10,11l-5.1,5.1c-0.3,0.3-0.7,0.3-1,0c-0.3-0.3-0.3-0.7,0-1L9,10L3.9,4.9c-0.3-0.3-0.3-0.7,0-1s0.7-0.3,1,0
+          		L10,9z"/>
+          </g>
+        </svg>
+      </div>
+    <div>
+    <div class="doc-preview">
+
+    <div>
+  </div>
+</body>
+<script type="text/javascript">
+
+  $('.preview').on('mouseover', function(){
+      $(this).siblings('.attachment-menu').addClass('show');
+  });
+
+  $('.inline-image').on('mouseover', function(){
+      $(this).addClass('focus');
+      $(this).children('.inline-menu').addClass('show');
+  });
+
+  $('.attachment').on('mouseover', function(){
+    $(this).addClass('focus');
+  });
+
+  $('.attachment').on('mouseleave', function(){
+    $(this).removeClass('focus');
+    var childMenu = $(this).children('.attachment-menu');
+    childMenu.removeClass('show');
+    childMenu.find('.menu-entry').removeClass('inactivate');
+    childMenu.find('.menu').removeClass('show');
+  });
+
+  $('.inline-image').on('mouseleave', function(){
+    $(this).removeClass('focus');
+    var childMenu = $(this).children('.inline-menu');
+    childMenu.removeClass('show');
+    childMenu.find('.menu-entry').removeClass('inactivate');
+    childMenu.find('.menu').removeClass('show');
+  });
+
+  $(window).on('click', function() {
+    $('.attachment-menu').removeClass('show');
+    $('.menu-entry').removeClass('inactivate');
+    $('.menu').removeClass('show');
+  });
+
+  $('.menu-entry').on('click', function(event){
+    event.stopPropagation();
+    $(this).addClass('inactivate');
+    $(this).siblings('.menu').addClass('show');
+  });
+
+  $('.menu').on('click', function(event){
+      event.stopPropagation();
+      var hitTarget = $(event.target),
+          linkType = hitTarget.attr('data-linktype');
+
+      if( linkType == 'inline' ){
+        var targetThumb = hitTarget.parents('.attachment');
+        targetThumb.hide();
+        $('.inline-image').addClass('show');
+      }else if(linkType == 'download'){
+
+      }else if(linkType == 'remove-thumb'){
+        var target = hitTarget.parents('.attachment');
+        target.hide();
+      }else if(linkType == 'remove-inline'){
+        var target = hitTarget.parents('.inline-image');
+        target.hide();
+      }else if(linkType == 'attachment'){
+        var targetID = hitTarget.attr('data-typevalue'),
+            targetParent =  hitTarget.parents('.inline-image');
+        $('#'+targetID).show();
+        targetParent.removeClass('show');
+      }
+      updateNumber();
+  });
+
+  $('.preview').on('click', function(){
+      $('#doc-preview-container').show();
+      var type = $(this).attr('data-targettype'),
+          value = $(this).attr('data-targetvalue'),
+          filename = $(this).attr('data-filename');
+          console.log(filename);
+      if(type == 'pdf'){
+        $('.doc-preview').append('<embed src="'+value+'" width="600" height="588" type="application/pdf">');
+      }else if(type == 'img'){
+        $('.doc-preview').append('<img src="'+value+'" />');
+      }
+
+      $('.doc-preview-nav .left').text(filename);
+  });
+
+  $('.close-preview').on('click', function(){
+    $('#doc-preview-container').hide();
+    $('.doc-preview').empty();
+  });
+
+  function updateNumber(){
+    var n = $('.attachment:visible').length;
+    if(n < 1){
+      $('.summary').hide();
+    }else{
+      $('.summary').show();
+      $('.attachment-number').text(n);
+    }
+  }
+
+</script>
+</html>

@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+ 	<head>
+       	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0" />
+       	<link href="icons-norrinproto-2px-v2.css" type="text/css" rel="stylesheet" />
+        <style type="text/css">
+
+       	html, body{
+       		height: 100%;
+       		width: 100%;
+       		position: relative;
+       		background: #B9BDC5;
+       		margin: 0;
+       		font-family: Arial, sans-serif;
+       		overflow-y: hidden;
+       	}
+
+       	body{
+       		box-sizing: border-box;
+          margin: 0 auto;
+          max-width: 1920px;
+       	}
+
+       	body.right-preview{
+       		min-width: 1279px;
+       		overflow-x: scroll;
+       	}
+
+        body > p{
+          position: fixed;
+          right: 10px;
+          top: 10px;
+        }
+
+        .grid{
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          opacity: 0.25;
+          background: url(img/grid_16px_48px.png) repeat;
+        }
+
+       	p{
+       		padding: 6px 12px;
+       		background: rgba(45, 53, 62, 0.3);
+       		color: #464E56;
+       		display: inline-block;
+       		margin: 10px;
+       	}
+
+		#preview-toggle, #view-toggle{
+			position: absolute;
+			top: 0;
+			right: 0;
+			background-color:#26282A;
+			border-radius: 0 0 0 6px;
+			padding: 6px 12px;
+			height: 18px;
+			line-height: 18px;
+			font-size: 0.75em;
+			color: white;
+      z-index: 100;
+		}
+		#preview-toggle > input{
+			margin-right: 4px;
+		}
+
+		#view-toggle > input{
+			margin-right: 6px;
+		}
+
+    #main[data-view=document] #preview-toggle, #main[data-view=search] #preview-toggle{
+      visibility: hidden;
+    }
+
+       	#hethird-railer{
+       		position: absolute;
+       		top: 0;
+       		width: 100%;
+       		height: 73px;
+
+       	}
+       	#main{
+       		position: absolute;
+       		width: 100%;
+       		left: 0;
+       		right: 0;
+       		top: 73px;
+       		bottom: 0;
+       		background: #F1F1F5;
+       	}
+       		#main > div{
+       			position: absolute;
+       			top: 0;
+       			bottom: 0;
+       		}
+
+	       	#left-rail{
+	       		width: 192px;
+	       		left: 0;
+	       		background: #E0E4E9;
+	       	}
+
+	       	.menu{
+	       		display: none;
+	       		margin: 20px 10px;
+	       		vertical-align: middle;
+	       	}
+	       	p.alt-768{
+	       		margin: 5px;
+	       		padding: 5px;
+	       		font-size: 11px;
+	       	}
+	       	.alt-768{
+	       		display: none;
+	       	}
+
+	       	#content{
+	       		left: 192px;
+	       		right: 0;
+	       		background: #9EA2AF;
+	       	}
+
+	       		#wrap{
+	       			position: relative;
+	       			display: block;
+	       			margin: 0 auto;
+	       			height: calc(100%  - 16px);
+	       		}
+
+	       		#list{
+	       			position: relative;
+	       			display: block;
+	       			margin: 16px 208px 16px 16px;
+	       			height: calc( 100% - 16px );
+	       			background: #E0E4E9;
+	       		}
+
+	       		#main[data-view=search] #list{
+	       			margin-right: 332px;
+	       		}
+
+            #main[data-view=document] #list{
+              margin-right: 16px;
+            }
+	      			#right-preview, #doc-view{
+	      				position: absolute;
+	      				width: 100%;
+	      				height: 100%;
+	      				display: none;
+	      			}
+	      			#preview-list{
+	      				position: absolute;
+	      				left: 0;
+	      				height: 100%;
+	      				width: 32%;
+	      				min-width: 282px;
+	      				background: rgba(0, 205, 122, 0.1);
+	      			}
+	      			#preview-content{
+	      				position: absolute;
+	      				right: 0;
+	      				height: 100%;
+	      				width: 68%;
+	      				min-width: 598px;
+	      				background: rgba(0, 205, 122, 0.25);
+	      			}
+
+	      			#right-preview p, #doc-view p{
+	      				margin-top: 60px;
+	      			}
+
+
+              #doc-view #doc-view-msg{
+                position: absolute;
+                left: 0;
+                height: 100%;
+                width: 50%;
+                background: rgba(255, 211, 51, 0.1);
+              }
+
+              #doc-view #doc-view-doc{
+                position: absolute;
+                right: 0;
+                height: 100%;
+                width: 50%;
+                background: rgba(255, 211, 51, 0.2);
+              }
+
+	      		body.right-preview #right-preview{
+	      			display: block;
+	      		}
+
+	       		body.right-preview #list > p{
+	       			opacity:  0.7;
+	       		}
+
+            #main[data-view=document] #doc-view{
+	      			display: block;
+	      		}
+
+	       	#third-rail{
+	       		position: absolute;
+	       		width: 160px;
+	       		right: 16px;
+	       		top: 0;
+	       		bottom: 0;
+	       		background: rgba(255, 255, 255, 0.2);
+	       	}
+
+	       	#main[data-view=search] #third-rail{
+	       		width: 300px;
+	       		bottom: 0;
+	       	}
+
+          #main[data-view=document] #third-rail{
+            display: none;
+          }
+
+	    #size-tool{
+	    	position: fixed;
+	    	background: rgba(0,0,0, 0.9);
+	    	width: 1024px;
+	   		box-sizing: border-box;
+	   		left: 50%;
+	   		bottom: 0;
+	   		margin-left: -512px;
+	   		color: white;
+	   		border-radius: 6px 6px 0 0;
+	   		padding: 16px;
+	    }
+
+	    #size-tool p{
+	    	color: inherit;
+	    	margin: 0;
+	    	padding: 0;
+	    	font-size: 12px;
+	    }
+
+	    #size-tool p .icon{
+	    	font-family: 'norrinproto-2px';
+	    	font-size: 16px;
+  			display: inline-block;
+  			vertical-align: bottom;
+  			color: black;
+  			background: white;
+  			margin-left: 4px;
+	    }
+
+	    #size-tool ul {
+	    	padding: 0;
+	    	margin: 16px 0 0 0;
+	    }
+
+	    #size-tool ul li{
+	    	list-style: none;
+	   		line-height: 22px;
+	   		display: inline-block;
+	   		margin-right: 24px;
+	    }
+
+	    @media only screen and (max-width: 768px){
+	    	#content{
+	       		left:0;
+	       		right: 0;
+	       	}
+
+	       	#list{
+	       		margin-right: 16px;
+	       	}
+
+	       	#left-rail{
+	       		width: 0;
+	       	}
+	       	#third-rail{
+	       		right: 0;
+	       		width: 0;
+	       	}
+
+	       	#left-rail.slideIn{
+	       		width: calc(75% - 16px) !important;
+	       		box-shadow: none !important;
+	       		background: linear-gradient(225deg, rgba(224, 228, 233, 0.5), rgba(224, 228, 233, 0));
+	       		background: -webkit-linear-gradient(225deg, rgba(224, 228, 233, 0.5), rgba(224, 228, 233, 0));
+	       		position: fixed;
+	       		z-index: 10;
+	       		left: 0;
+	       	}
+
+	       	body.slideIn #hethird-railer, body.slideIn #main{
+	       		transition: margin .2s;
+	       		margin-left: 75%;
+	       	}
+
+	    }
+
+	    @media only screen and (max-width: 1023px){
+	    	#left-rail{
+	    		width: 0;
+	    		right: 0;
+	    		z-index: 10;
+	    		overflow: hidden;
+	    		transition: width .2s;
+	    	}
+	   		#left-rail.slideIn{
+	       		width: 192px;
+	       		box-shadow: 2px 0px 2px rgba(0,0,0, 0.2);
+	       	}
+	       	.hide-768{
+	       		display: none;
+	       	}
+	       	.alt-768{
+	       		display: inline-block;
+	       	}
+
+	       	#left-rail.slideIn p.alt-768{
+	       		display: none;
+	       	}
+
+	       	#left-rail.slideIn .hide-768{
+	       		display: inline-block;
+	       	}
+
+	       	#page-tool{
+	       		display: none;
+	       	}
+	    }
+
+	    @media only screen and (min-width: 769px) and (max-width: 1023px){
+	       	#content{
+	       		left: 0px;
+	       		right: 0;
+	       	}
+	    }
+
+	    @media only screen and (max-width: 1179px){
+	       	#main[data-view=search] #third-rail{
+	       		width: 192px !important;
+	       		bottom: 0;
+	       	}
+
+	       	#main[data-view=search] #list{
+	       		margin-right: 224px;
+	       	}
+
+          #main[data-view=document] #doc-view-doc{
+	       		width: 100% !important;
+	       		bottom: 0;
+	       	}
+
+	       	#main[data-view= document] #doc-view-msg{
+	       		display: none;
+	       	}
+	    }
+
+	    @media only screen and (min-width: 1360px){
+	    	/*#content{
+	    		width: auto;
+	    	}*/
+
+          #content{
+            left: 14.2%;
+          }
+          #left-rail{
+            width:14.2%;
+          }
+
+		    	#third-rail{
+		    		width: 300px;
+		    		height: 250px;
+		    	}
+
+		    	#list{
+		    		margin-right: 348px;
+		    	}
+
+		      body.right-preview #list{
+  		    	min-width: 880px;
+	      		margin-right: 192px;
+	      	}
+
+	      	body.right-preview #third-rail{
+	      		width: 160px;
+	      		height: 600px;
+	      	}
+
+          body.right-preview #content{
+            left: 192px;
+          }
+          body.right-preview #left-rail{
+            width: 192px;
+          }
+
+	      	#main[data-view=search] #third-rail{
+	      		bottom: 0;
+	      		height: auto;
+	      	}
+
+	    }
+
+	    @media only screen and (min-width: 1440px){
+        #wrap{
+            width: 100%;
+	    	}
+
+        #content{
+          left: 14%;
+        }
+
+        #left-rail{
+          width: 14%;
+        }
+
+		      body.right-preview #list{
+	      		margin-right: 192px;
+	      	}
+
+	      	body.right-preview #third-rail{
+	      		width:  160px;
+	      		height: 600px;
+	      	}
+
+          body.right-preview #content{
+            left: 14%;
+          }
+
+          body.right-preview #left-rail{
+            width: 14%;
+          }
+	    }
+
+      @media only screen and (min-width: 1601px){
+        #content{
+          left: 224px;
+          float: left;
+        }
+        #left-rail{
+          max-width: 224px;
+          width:14%;
+        }
+        body.right-preview #list{
+          margin-right: 348px;
+        }
+
+        body.right-preview #third-rail{
+          width:  300px;
+          height: 250px;
+        }
+
+        body.right-preview #content{
+          left: 224px;
+          float: left;
+        }
+
+        body.right-preview #left-rail{
+          width: 224px;
+          max-width: 224px;
+        }
+      }
+
+
+	    @media only screen and (min-width: 1920px){
+        #content{
+          float: left;
+          left: 224px;
+        }
+        #left-rail{
+          width: 224px;
+          max-width: 224px;
+        }
+
+	    	#third-rail{
+		    	width: 300px;
+		    	height: 600px;
+		    }
+
+        body.right-preview #content{
+          left: 224px;
+          float: left;
+        }
+
+        body.right-preview #left-rail{
+          width: 224px;
+          max-width: 224px;
+        }
+
+		    #main[data-view=search] #third-rail{
+		    	bottom: 0;
+		    	height: auto;
+		    }
+
+	    }
+
+
+
+  </style>
+   </head>
+    <body>
+      <p id="forWindow">Window: <span></span></p>
+    	<div id="header">
+    		<a class="menu alt-768" href="javascript:void(0)"><img src="img/sidebar@2x.png" width="30px" ></a><p>Width: <span></span></p>
+    	</div>
+    	<div id="main" data-view="read">
+    		<div id="left-rail">
+    			<p class="hide-768">Nav: <span></span></p>
+    			<p class="alt-768"><span></span></p>
+    		</div>
+    		<div id="content">
+    			<p>Main: <span></span></p>
+    			<div id="wrap">
+	    			<div id="list">
+              <div id="doc-view">
+                <div id="doc-view-msg">
+                  <p>Message: <span></span></p>
+                </div>
+                <div id="doc-view-doc">
+                  <p>Document View: <span></span></p>
+                </div>
+              </div>
+	    				<div id="right-preview">
+		    				<div id="preview-list">
+		    					<p>Preview List: <span></span></p>
+		    				</div>
+		    				<div id="preview-content">
+		    					<p>Preview Content: <span></span></p>
+		    				</div>
+		    			</div>
+	    				<p>Full List: <span></span></p>
+	    				<div id="preview-toggle">
+	    					<input type="checkbox" name="preview-toggle" value="right-preview">Turn on preview pane
+	    				</div>
+
+	    			</div>
+	    			<div id="third-rail">
+	    				<p>Third Rail: <span></span></p>
+	    			</div>
+	    		</div>
+	    		<div id="view-toggle">
+	    			<input type="radio" name="view-toggle" value="read" checked>Read Message&nbsp;&nbsp;&nbsp;
+	    			<input type="radio" name="view-toggle" value="search">Search&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="view-toggle" value="document">Document Preview&nbsp;&nbsp;&nbsp;
+	    			<!-- <input type="radio" name="view-toggle" value="compose">Compose&nbsp;&nbsp;&nbsp; -->
+	    		</div>
+    		</div>
+    	</div>
+      <div class="grid">
+
+      </div>
+
+    	<script src="jquery.1.8.3.js"></script>
+	    <script type="text/javascript">
+	    	var items = [];
+          items.push($('#header'));
+	    		items.push($('#left-rail'));
+	    		items.push($('#content'));
+	    		items.push($('#preview-list'));
+	    		items.push($('#preview-content'));
+	    		items.push($('#list'));
+	    		items.push($('#third-rail'));
+          items.push($('#doc-view-doc'));
+          items.push($('#doc-view-msg'));
+
+			updateWidthInElement();
+
+			updatePreviewMode($(window).width());
+
+			$(window).on('resize', function(e){
+	    		updateWidthInElement();
+	    		var $this = $(this);
+	    		updatePreviewMode($this.width());
+	    	});
+
+	    	$('.menu').on('click', function(){
+	    		var p = $('#left-rail').find('p > span');
+	    			p.text();
+
+	    		$('#left-rail').toggleClass('slideIn');
+	    		$('body').toggleClass('slideIn');
+	    		setTimeout(function(){
+	    			var w = $('#left-rail').css('width');
+	    			p.text(w);
+	    		}, 280);
+	    	});
+
+	    	$('input[name=preview-toggle]').on('change', function(){
+	    		$('body').toggleClass('right-preview');
+          updateWidthInElement();
+	    		if($("input[name=view-toggle]:checked").val() == 'search'){
+	    			$("input[value=read]").prop('checked', true);
+	    		}
+	    	});
+
+	    	$('input[name=view-toggle]').on('change', function(){
+	    		var val =  $("input[name=view-toggle]:checked").val();
+
+          $('#main').attr('data-view', val);
+	    		updateWidthInElement();
+	    		if( val == 'search' || val == 'document'){
+	    			$('input[name=preview-toggle]').prop('checked', false);
+	    			$('body').removeClass('right-preview');
+          }
+	    	});
+
+	    	function updatePreviewMode(width){
+
+	    		if( width <  1024){
+	    			$('body').removeClass('right-preview');
+	    		}else if(width >=  1024 && $('input[name=preview-toggle]').is(':checked')){
+	    			$('body').addClass('right-preview');
+	    		}
+	    	}
+
+	    	function updateWidthInElement(){
+
+	    		for(var i= 0;  i <  items.length; i++){
+	    			var p = items[i].children('p').find('span'),
+	    				w = items[i].css('width');
+
+	    			p.text(w);
+	    		}
+
+          var wp = $('#forWindow').find('span'),
+              ww = $(window).width();
+          wp.text(ww);
+	    	}
+
+	    </script>
+    </body>
+</html>
